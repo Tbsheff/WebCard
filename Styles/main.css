@@ -6,6 +6,10 @@
     --prussian-blue: #3d5a80;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 .button {
     display: inline-block;
     text-align: center;
@@ -129,15 +133,14 @@ footer{
     width: 300px;
     height: 200px;
     position: relative;
-
-    
+    margin: 10px;
 }
 .img-wrapper {
     overflow: hidden;
-    border: green;
 }
 .card:hover {
     box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
 .card:hover img {
@@ -154,8 +157,10 @@ footer{
 #learnmore {
     position: absolute;
     text-align: center;
-    top: 0.5rem;
-    left: 00.1rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     font-size: x-large;
     transition: 500ms;
     color: transparent;
@@ -164,6 +169,12 @@ footer{
     position: absolute;
     font-size: x-large;
     color: white;
-    top: 0.5rem;
-    left: 0.1rem;
+    top: 0;
+    left: 0;
+    text-align: center;
+    right: 0;
+    bottom: 0;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.76);
+    background-color: rgba(0,0,0,0.4); 
+    background: linear-gradient(to top, rgba(0,0,0,0.6));
 }
