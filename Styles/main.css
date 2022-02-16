@@ -1,0 +1,129 @@
+:root {
+    --prussian-blue: #3d5a80;
+}
+
+:root {
+    --pale-cerulean: #98c1d9;
+}
+
+:root {
+    --burnt-sierra: #ee6c4d;
+}
+
+:root {
+    --slate: #293241;
+}
+
+.button {
+    display: inline-block;
+    text-align: center;
+    background-color: var(--pale-cerulean);
+    color: var(--slate);
+    padding: 1em 1.5em;
+    border: 1px solid #000;
+    cursor: pointer;
+    font-family: 'Fraunces', serif;
+    margin-left: 50px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-decoration: none;
+    border: none;
+}
+
+.button:hover {
+    background-color: var(--burnt-sierra);
+    color: var(--slate);
+    padding: 0.8em 1.25em;
+    text-decoration: none;
+    border: none;
+
+}
+
+p {
+    font-family: 'Commissioner', sans-serif;
+    color: 555;
+}
+
+article {
+    font-family: 'Commissioner', sans-serif;
+    color: 555;
+}
+
+picture img {
+    width: 100%;
+    margin-left: none;
+    padding-left: none;
+}
+
+body {
+    font-family: 'Commissioner', sans-serif;
+    color: 555;
+    line-height: 1.4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+h1 {
+    font-family: 'Fraunces', serif;
+    color: var(--prussian-blue);
+    line-height: 1.1rem;
+}
+
+h2 {
+    font-family: 'Fraunces', serif;
+    color: var(--slate);
+    line-height: 1.2rem;
+}
+
+h3 {
+    font-family: 'Fraunces', serif;
+    color: var(--slate);
+    line-height: 1.3rem;
+}
+
+a {
+    border-bottom: 2px solid var(--prussian-blue);
+    font-size: 1em;
+    transition: all 0.25s linear;
+    position: relative;
+    text-decoration: none;
+    padding-bottom: -3px;
+    color:var(--prussian-blue)
+}
+
+a::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--burnt-sierra);
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    transform-origin: left;
+    transform: scale(0);
+    transition: 0.25s linear; 
+}
+
+a:hover::before {
+    transform: scale(1);
+}
+
+ol {
+    padding: 4px;
+}
+
+main{
+    margin: 0 auto;
+    padding: 0 1rem;
+    max-width: 50rem;
+}
+
+head{
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+footer{
+    margin-top: 3rem;
+}
