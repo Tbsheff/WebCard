@@ -1,17 +1,9 @@
-:root {
-    --prussian-blue: #3d5a80;
-}
-
-:root {
-    --pale-cerulean: #98c1d9;
-}
 
 :root {
     --burnt-sierra: #ee6c4d;
-}
-
-:root {
     --slate: #293241;
+    --pale-cerulean: #98c1d9;
+    --prussian-blue: #3d5a80;
 }
 
 .button {
@@ -28,12 +20,14 @@
     margin-bottom: 25px;
     text-decoration: none;
     border: none;
+    overflow: hidden;
 }
 
 .button:hover {
     background-color: var(--burnt-sierra);
     color: var(--slate);
-    padding: 0.8em 1.25em;
+    transform: scale(0.8);
+    overflow: hidden;
     text-decoration: none;
     border: none;
 
@@ -148,7 +142,7 @@ footer{
 
 .card:hover img {
     transform: scale(1.2);
-    filter: grayscale(0.75);
+    filter: grayscale(0.9);
     transition: 500ms;
 }
 #biblelandscape {
