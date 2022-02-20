@@ -169,14 +169,14 @@ footer{
     content: '';
     position: absolute;
 }
-#biblelandscape {
+.card img {
     display: block;
     width: 15rem;
     height: 15rem;
     transition: transform 500ms;
 }
 
-#learnmore {
+.card p {
     position: absolute;
     
     text-align: center;
