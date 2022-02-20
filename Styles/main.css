@@ -188,7 +188,7 @@ footer{
     transition: 500ms;
     color: transparent;
 }
-.card:hover #learnmore{
+.card:hover p{
     position: absolute;
 
     font-size: x-large;
