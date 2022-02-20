@@ -171,6 +171,7 @@ footer{
 }
 .card img {
     display: block;
+    overflow: hidden;
     width: 15rem;
     height: 15rem;
     transition: transform 500ms;
