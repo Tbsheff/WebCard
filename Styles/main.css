@@ -9,6 +9,12 @@
     box-sizing: border-box;
 }
 
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
 .button {
     display: inline-block;
     text-align: center;
@@ -25,6 +31,7 @@
     border: none;
     overflow: hidden;
     position: relative;
+    transition: transform 300ms;
 }
 
 .button:hover {
@@ -34,6 +41,7 @@
     overflow: hidden;
     text-decoration: none;
     border: none;
+    
 
 }
 
@@ -64,6 +72,15 @@ body {
     line-height: 1.4rem;
     padding-left: 1rem;
     padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+main {
+    align-self: center;
+    max-width: 45rem;
 }
 
 h1 {
@@ -84,7 +101,8 @@ h3 {
     line-height: 1.3rem;
 }
 
-a {
+nav a {
+    height: 100%;
     border-bottom: 2px solid var(--prussian-blue);
     font-size: 1em;
     transition: all 0.25s linear;
@@ -94,7 +112,7 @@ a {
     color: var(--prussian-blue)
 }
 
-a::before {
+nav a::before {
     content: "";
     display: block;
     width: 100%;
@@ -106,10 +124,12 @@ a::before {
     transform-origin: left;
     transform: scale(0);
     transition: 0.25s linear;
+    transform-origin: right;
 }
 
-a:hover::before {
+nav a:hover::before {
     transform: scale(1);
+    transform-origin: left;
 }
 
 ol {
@@ -131,15 +151,49 @@ footer {
     margin-top: 3rem;
 }
 
+.cards {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+    flex: 1 1 40%;
+    width: 100%;
+    height: 100%;
+    font-size: 2rem;
+    line-height: 2rem;
+}
+
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 300ms;
-    width: 100%;
-    display: inline-block;
-    width: 15rem;
-    height: 15rem;
     position: relative;
-    margin: 1rem;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 600px){
+    .cards {
+        flex-direction: row;
+        flex-wrap: wrap; 
+        justify-content: center;
+        gap: 2rem;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
+    .card {
+        flex-direction: row;
+        flex-basis: 40%;
+    }
+}
+
+@media (min-width: 1000px){
+    .cards {
+        flex-direction: row;
+        flex-wrap: nowrap; 
+        justify-content: center;
+        gap: 2rem;
+    }
 }
 
 .card::after {
@@ -151,6 +205,18 @@ footer {
 
 .img-wrapper {
     overflow: hidden;
+    position: relative;
+    object-fit: cover;
+    display: block;
+    aspect-ratio: 4 / 3;
+    height: 100%;
+    margin: 0;
+}
+
+.card a {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .card:hover {
@@ -172,41 +238,41 @@ footer {
 }
 
 .card img {
-    display: block;
-    overflow: hidden;
-    width: 15rem;
-    height: 15rem;
+    height: 100%;
     transition: transform 500ms;
+    object-fit: cover;
 }
 
 .card p {
     position: absolute;
-
-    text-align: center;
-    top: 0;
+    bottom: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    font-size: x-large;
-    transition: 500ms;
-    color: transparent;
+    color: #fff;
+    background: linear-gradient(
+      to bottom,
+      transparent 0,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+    padding: 3rem .75rem 1rem;
+    z-index: 1;
+    margin: 0;
 }
 
-.card:hover p {
+/* .card:hover p {
     position: absolute;
-
-    font-size: x-large;
-    color: var(--pale-cerulean);
-    top: 0;
-    left: 0;
-    text-align: center;
-    right: 0;
-    bottom: 0;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
-    /* background-color: rgba(0,0,0,0.4); 
-    background: linear-gradient(to top, rgba(0,0,0,0.6)); */
-}
-
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #fff;
+  background: linear-gradient(
+    to bottom,
+    transparent 0,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  padding: 3rem .5rem .75rem;
+  z-index: 1;
+} */
 .overlay {
     position: absolute;
     top: 0;
@@ -248,16 +314,10 @@ footer {
     text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
 }
 
-li:hover {
-    transform: scale(1.1);
-    transition: 300ms;
-    transform-origin: left ;
-    overflow: hidden;
-}
 
 .form {
     background-color: #ddd;
-    height: 80vh;
+    height: 100%;
 }
 
 .loader {
@@ -268,11 +328,17 @@ li:hover {
     align-items: center;
     justify-content: center;
     position: fixed;
-    top: 50%;
-    left: 50%;
+    top: 50vh;
+    bottom: 50vh;
+    left: 50vw;
+    right: 50vw;
+    margin: 0;
+    padding: 0;
+    align-self: center;
 }
 
 .loader div {
+    
     width: 30px;
     height: 30px;
     background-color: var(--burnt-sierra);
@@ -335,3 +401,34 @@ li:hover {
 .form .svg {
     position: relative;
 }
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+.cross {
+    padding: 4rem;
+    width: 40%;
+    align-self: center;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+    gap: 1rem;
+    flex: 2 1 0;
+}
+
+nav {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+}
+
+nav a {
+    display: inline-block;
+    padding: 1rem 1.2rem;
+  }
