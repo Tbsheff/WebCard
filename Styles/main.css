@@ -13,7 +13,7 @@ img {
     width: 100%;
     height: auto;
     display: block;
-  }
+}
 
 .button {
     display: inline-block;
@@ -41,7 +41,7 @@ img {
     overflow: hidden;
     text-decoration: none;
     border: none;
-    
+
 
 }
 
@@ -172,25 +172,26 @@ footer {
     height: 100%;
 }
 
-@media (min-width: 600px){
+@media (min-width: 600px) {
     .cards {
         flex-direction: row;
-        flex-wrap: wrap; 
+        flex-wrap: wrap;
         justify-content: center;
         gap: 2rem;
         font-size: 1.5rem;
         line-height: 1.5rem;
     }
+
     .card {
         flex-direction: row;
         flex-basis: 40%;
     }
 }
 
-@media (min-width: 1000px){
+@media (min-width: 1000px) {
     .cards {
         flex-direction: row;
-        flex-wrap: nowrap; 
+        flex-wrap: nowrap;
         justify-content: center;
         gap: 2rem;
     }
@@ -249,11 +250,9 @@ footer {
     left: 0;
     right: 0;
     color: #fff;
-    background: linear-gradient(
-      to bottom,
-      transparent 0,
-      rgba(0, 0, 0, 0.6) 100%
-    );
+    background: linear-gradient(to bottom,
+            transparent 0,
+            rgba(0, 0, 0, 0.6) 100%);
     padding: 3rem .75rem 1rem;
     z-index: 1;
     margin: 0;
@@ -273,6 +272,12 @@ footer {
   padding: 3rem .5rem .75rem;
   z-index: 1;
 } */
+
+.hero {
+    position: relative;
+    display: flex;
+}
+
 .overlay {
     position: absolute;
     top: 0;
@@ -286,12 +291,13 @@ footer {
 }
 
 .hero .text-group {
+    display: flex;
     text-align: center;
-    position: absolute;
-    top: 10%;
-
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
     width: 100%;
-    padding: 0 2rem;
+    margin-top: 2rem;
 }
 
 .hero h1 {
@@ -300,11 +306,9 @@ footer {
     font-size: 4rem;
     line-height: 3.5rem;
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);
+    flex: 1 1 100%;
 }
 
-.hero {
-    position: relative;
-}
 
 .hero p {
     font-family: "Commissioner", sans-serif;
@@ -329,16 +333,15 @@ footer {
     justify-content: center;
     position: fixed;
     top: 50vh;
-    bottom: 50vh;
     left: 50vw;
-    right: 50vw;
-    margin: 0;
+    margin-top: -45px;
+    margin-left: -45px;
     padding: 0;
     align-self: center;
 }
 
 .loader div {
-    
+
     width: 30px;
     height: 30px;
     background-color: var(--burnt-sierra);
@@ -406,9 +409,10 @@ h1 {
     display: flex;
     justify-content: center;
 }
+
 .cross {
-    padding: 4rem;
-    width: 40%;
+    padding: 1rem;
+    width: 25rem;
     align-self: center;
 }
 
@@ -418,24 +422,34 @@ nav ul {
     display: flex;
     list-style-type: none;
     justify-content: space-around;
-    gap: 1rem;
+    gap: 0rem;
     flex: 2 1 0;
 }
 
 nav {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
     background-color: var(--slate);
     width: 100%;
     font-size: 1.5rem;
+    padding-bottom: 1rem;
+}
 
+nav li{
+    color: white; 
+    padding: 1rem;
+    display: block;
+    position: relative;
+    height: 100%;
+    align-self: center;
+    list-style-type: none;
 }
 
 nav a {
     display: inline-block;
-    padding: 1rem 1.2rem;
+    padding: 1rem;
+    padding-bottom: 0.5rem;
     color: white;
-  }
+    margin: 0;
+}
 
 nav li:hover {
     transform: grayscale(70%);
@@ -445,6 +459,8 @@ footer {
     padding: 2rem;
     justify-content: center;
     text-align: center;
+    margin: 0;
+    overflow: hidden;
 }
 
 aside {
@@ -459,4 +475,9 @@ aside h3 {
 
 ol {
     list-style-position: inside;
+}
+
+.active-page{
+    padding: 1rem;
+    padding-bottom: 0.5rem;
 }
