@@ -73,6 +73,7 @@ body {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    flex: 1 1 0;
     margin: 0;
 }
 
@@ -480,4 +481,51 @@ ol {
 .active-page{
     padding: 1rem;
     padding-bottom: 0.5rem;
+}
+
+.panel {
+    max-width: none;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+    padding: 2rem;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: auto;
+}
+
+.panel .button {
+    align-self: center;
+    margin: 1rem;
+}
+
+.panel .image-wrapper{
+    flex: 1 1 1;
+}
+
+.panel .text-wrapper {
+    flex: 1 1 1;
+
+}
+.panel h2 {
+    margin: 0;
+    text-align: center;
+}
+
+.left {
+    order: -1;
+}
+
+@media (max-width: 700px) {
+    .panel {
+        flex-direction: column-reverse;
+        margin-left: 1rem;
+        margin-top: 2rem;
+        padding: 1rem;
+        padding-bottom: 3rem;
+        gap: 2rem;
+    }
+    .left {
+        order: 0;
+    }
 }
