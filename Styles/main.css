@@ -68,7 +68,7 @@ picture img {
 
 body {
     font-family: 'Commissioner', sans-serif;
-    color: 555;
+    color: #555;
     line-height: 1.4rem;
     display: flex;
     flex-direction: column;
@@ -163,6 +163,7 @@ footer {
     line-height: 2rem;
     padding-left: 1rem;
     padding-right: 1rem;
+    padding-top: 1.5rem;
 }
 
 .card {
